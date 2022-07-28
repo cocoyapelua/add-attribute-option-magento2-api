@@ -1,3 +1,4 @@
 conf/.env
 conf/__pycache__/
+funtions/__pycache__/
 .idea

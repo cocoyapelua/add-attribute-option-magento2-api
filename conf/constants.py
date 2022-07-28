@@ -1,5 +1,7 @@
 import os
+from os.path import expanduser
 from dotenv import load_dotenv
+import paramiko
 
 load_dotenv()
 
@@ -13,7 +15,7 @@ SQL_PORT = os.environ.get("SQL_PORT", None)
 SSH_HOST = os.environ.get("SSH_HOST", None)
 SSH_USER = os.environ.get("SSH_USER", None)
 SSH_PORT = os.environ.get("SSH_PORT", None)
-KEY_FILE = os.environ.get("KEY_FILE", None)
+KEY_FILE = paramiko.RSAKey.from_private_key_file(expanduser(os.environ["KEY_FILE"]))
 
 MAGENTO_URL = os.environ.get("MAGENTO_URL", None)
 AUTH = os.environ.get("AUTH", None)

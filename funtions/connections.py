@@ -18,7 +18,7 @@ def sql_connect():
     global conn
     conn = mysql.connector.connect(host=constants.SQL_HOST, user=constants.SQL_USERNAME,
                                    password=constants.SQL_PASSWORD, database=constants.SQL_DATABASE,
-                                   port=tunnel.local_bind_port)
+                                   port=tunnel.local_bind_port, use_pure=True)
 
 
 def insert_query(query):

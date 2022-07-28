@@ -1,3 +1,5 @@
+import os
+
 import requests
 import csv
 import funtions.connections as connections
@@ -6,7 +8,7 @@ import conf.constants as constants
 connections.ssh_connect()
 connections.sql_connect()
 
-data = csv.DictReader(open(constants.PATH_FILE, 'r'))
+data = csv.DictReader(open(str(constants.PATH_FILE), 'r'))
 headers = {
     'Authorization': 'Bearer {}'.format(constants.AUTH),
     'Content-Type': 'application/json'

@@ -1,5 +1,3 @@
-import os
-
 import requests
 import csv
 import funtions.connections as connections

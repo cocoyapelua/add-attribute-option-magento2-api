@@ -17,8 +17,10 @@ SSH_USER = os.environ.get("SSH_USER", None)
 SSH_PORT = os.environ.get("SSH_PORT", None)
 KEY_FILE = paramiko.RSAKey.from_private_key_file(expanduser(os.environ["KEY_FILE"]))
 
+ATTRIBUTE_CODE = os.environ.get("ATTRIBUTE_CODE", None)
+
 MAGENTO_URL = os.environ.get("MAGENTO_URL", None)
 AUTH = os.environ.get("AUTH", None)
-API_URL = 'rest/V1/products/attributes/{}/options'.format(os.environ.get("ATTRIBUTE_CODE", None))
+API_URL = 'rest/V1/products/attributes/{}/options'.format(ATTRIBUTE_CODE)
 PATH_FILE = os.environ.get("PATH_FILE", None)
 BODY = '{"option": {"label": "{value}","value": "{value}","sort_order": 0,"is_default": false}}'

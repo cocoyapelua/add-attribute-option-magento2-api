@@ -6,7 +6,7 @@ import conf.constants as constants
 connections.ssh_connect()
 connections.sql_connect()
 
-data = csv.DictReader(open(str(constants.PATH_FILE), 'r'))
+data = csv.DictReader(open(str(constants.PATH_FILE), 'r', encoding='utf-8'))
 headers = {
     'Authorization': 'Bearer {}'.format(constants.AUTH),
     'Content-Type': 'application/json'
@@ -59,3 +59,5 @@ for row in data:
 
 connections.sql_disconnect()
 connections.ssh_disconnect()
+
+print('done')

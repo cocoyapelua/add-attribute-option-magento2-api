@@ -2,4 +2,5 @@ conf/.env
 conf/__pycache__/
 funtions/__pycache__/
 .idea
-.files/
+files/
+files/labels.csv
